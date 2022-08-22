@@ -93,6 +93,8 @@ class SecondQuantizedDMETFragment:
         dummy_of_molecule._two_body_integrals = np.asarray(eri.transpose(0, 2, 3, 1), order="C")
 
         fragment_hamiltonian = dummy_of_molecule.get_molecular_hamiltonian()
+        print(dummy_of_molecule.canonical_orbitals)
+        print('__________')
         print(fragment_hamiltonian)
         '''
         Added thresholding
