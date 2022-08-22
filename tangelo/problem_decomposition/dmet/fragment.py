@@ -93,13 +93,13 @@ class SecondQuantizedDMETFragment:
         dummy_of_molecule._two_body_integrals = np.asarray(eri.transpose(0, 2, 3, 1), order="C")
 
         fragment_hamiltonian = dummy_of_molecule.get_molecular_hamiltonian()
+        print(fragment_hamiltonian)
         '''
         Added thresholding
-        '''
+     
         mean=np.mean(abs(fragment_hamiltonian))
         std=np.std(abs(fragment_hamiltonian))
         fragment_hamiltonian=(abs(fragment_hamiltonian)<mean-2*std)*fragment_hamiltonian
-        '''
         Edit ends #commit 1
         '''
         return get_fermion_operator(fragment_hamiltonian)
